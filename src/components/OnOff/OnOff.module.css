@@ -1,0 +1,16 @@
+.on {
+    background-color: green;
+}
+
+.off {
+    background-color: darkred;
+}
+
+.indicator {
+    margin-top: 15px;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
