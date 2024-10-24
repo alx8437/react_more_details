@@ -9,6 +9,8 @@ function App() {
     return (
         <div className="App">
 
+            <OnOff />
+
             <UncontrolledAccordion titleValue={'Menu'} />
             <UncontrolledAccordion titleValue={'Users'} />
 

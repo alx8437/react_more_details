@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 
-
-
 export function UncontrolledRating() {
     const [value, setValue] = useState(0)
 
@@ -10,24 +8,26 @@ export function UncontrolledRating() {
     }
 
     return (
-        <div>
-            <Star selected={value > 0}/><button onClick={() => setRating(1)}>1</button>
-            <Star selected={value > 1}/><button onClick={() => setRating(2)}>2</button>
-            <Star selected={value > 2}/><button onClick={() => setRating(3)}>3</button>
-            <Star selected={value > 3}/><button onClick={() => setRating(4)}>4</button>
-            <Star selected={value > 4}/><button onClick={() => setRating(5)}>5</button>
+        <div style={{display: 'flex'}}>
+            <Star selected={value > 0} setRating={setRating} rating={1} />
+            <Star selected={value > 1} setRating={setRating} rating={2} />
+            <Star selected={value > 2} setRating={setRating} rating={3} />
+            <Star selected={value > 3} setRating={setRating} rating={4} />
+            <Star selected={value > 4} setRating={setRating} rating={5} />
         </div>
     )
 }
 
 type StarPropsType = {
     selected: boolean
+    setRating: (value: number) => void
+    rating: number
 }
 
-function Star({ selected }: StarPropsType) {
+function Star({ selected, setRating, rating }: StarPropsType) {
     return (
-        <>
+        <div onClick={() => setRating(rating)}>
             {selected ? <span><b>star </b></span> : <span>star </span>}
-        </>
+        </div>
     )
 }
