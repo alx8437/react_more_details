@@ -1,7 +1,11 @@
-import {useState} from "react";
+import {FC} from "react";
 
-const OnOff = () => {
-    const [isOn, setIsOn] = useState<boolean>(false);
+type TOnOffPropsType = {
+    isOn: boolean
+    setIsOn: (state: boolean) => void
+}
+
+const OnOff: FC<TOnOffPropsType> = ({isOn, setIsOn}) => {
 
     const onStyle = {
         width: '30px',

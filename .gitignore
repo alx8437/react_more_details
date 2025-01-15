@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #settings webStorm
-.idea/
+.idea
+*storybook.log

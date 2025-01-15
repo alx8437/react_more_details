@@ -1,11 +1,7 @@
 import React, {useState} from "react";
 
-//UncontrolledAccordion сделать так, чтобы в нем был
-// локальный useState
-
 type AccordionPropsType = {
     titleValue: string
-    //collapsed: boolean
 }
 
 function UncontrolledAccordion({titleValue }: AccordionPropsType) {
