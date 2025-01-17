@@ -7,19 +7,22 @@ export default  {
     component: Accordion,
 };
 
-const setAccordionCollapsedHandler = () =>  action('Set accordion collapsed')
+const callback = action('Accordion mode changed')
 
 export const CollapsedAccordion = () => {
     return <Accordion
         titleValue={'CollapsedAccordion'}
         isCollapsed={true}
-        setAccordionCollapsed={() => {
-            console.log('setAccordionCollapsed')}}
+        setAccordionCollapsed={callback}
     />
 }
 
 export const OpenedAccordion = () => {
-    return <Accordion titleValue={'OpenedAccordion'} isCollapsed={false} setAccordionCollapsed={setAccordionCollapsedHandler} />
+    return <Accordion
+        titleValue={'OpenedAccordion'}
+        isCollapsed={false}
+        setAccordionCollapsed={callback}
+    />
 }
 
 export const AccordionDemo = () => {

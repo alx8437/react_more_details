@@ -5,7 +5,7 @@ type TOnOffPropsType = {
     setIsOn: (state: boolean) => void
 }
 
-const OnOff: FC<TOnOffPropsType> = ({isOn, setIsOn}) => {
+export const OnOff: FC<TOnOffPropsType> = ({isOn, setIsOn}) => {
 
     const onStyle = {
         width: '30px',
@@ -44,5 +44,3 @@ const OnOff: FC<TOnOffPropsType> = ({isOn, setIsOn}) => {
         </div>
     );
 };
-
-export default OnOff;
