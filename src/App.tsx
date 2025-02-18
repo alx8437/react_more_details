@@ -17,7 +17,17 @@ function App() {
             <OnOff isOn={isOn} setIsOn={setIsOn} />
             <Rating value={valueRating} setValueRating={setValueRating} />
             <UncontrolledRating />
-            <Accordion titleValue={'Menu'} isCollapsed={accordionCollapsed} setAccordionCollapsed={setAccordionCollapsed} />
+            <Accordion
+                items={[
+                {title: 'Irina', value: 1},
+                {title: 'Oleg', value: 2},
+                {title: 'Nasty', value: 3},
+            ]}
+                titleValue={'Menu'}
+                isCollapsed={accordionCollapsed}
+                setAccordionCollapsed={setAccordionCollapsed}
+                onClick={() => console.log('onClick')}
+            />
             <UncontrolledAccordion titleValue={'UncontrolledAccordion'} />
         </div>
     );
