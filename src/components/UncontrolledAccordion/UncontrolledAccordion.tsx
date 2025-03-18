@@ -7,16 +7,20 @@ type AccordionPropsType = {
 
 
 function UncontrolledAccordion({titleValue }: AccordionPropsType) {
-    const [collapsed, dispatch] = useReducer(reducer, {collapsed: false});
+    const [state, dispatch] = useReducer(reducer, {collapsed: false});
 
     const setCollapsedHandler = () => {
-        dispatch({type: TOGGLE_COLLAPSED})
+        const action = {
+            type: TOGGLE_COLLAPSED
+        }
+
+        dispatch(action)
     }
 
     return (
         <div>
             <AccordionTitle setCollapsedHandler={setCollapsedHandler} title={titleValue}/>
-            {!collapsed && <AccordionBody/>}
+            {!state.collapsed && <AccordionBody/>}
         </div>
     )
 
