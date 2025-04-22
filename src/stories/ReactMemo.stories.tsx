@@ -9,6 +9,7 @@ const NewMessagesCounter = (props: {count: number}) => {
 }
 
 const Users = React.memo((props: {users: Array<string>}) => {
+    console.log('Users render')
     return <div>
         {props.users.map((u, i) => <div key={i}>{u}</div>)}
     </div>
@@ -20,8 +21,15 @@ export const Example1 = () => {
         ["Sasha", "Natasha", "Vlad", "Margarita"
         ])
 
+    // Users перерендоривается только тогда, когда массив с users меняется.
+    const addUser = () => {
+        const newUsers = [...users, 'Sveta' + new Date().getTime()]
+        setUsers(newUsers);
+    }
+
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={addUser}>Add user</button>
         <NewMessagesCounter count={counter} />
         <Users users={users} />
     </>
