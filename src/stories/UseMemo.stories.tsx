@@ -64,8 +64,15 @@ export const HelpsToReactMemo = () => {
         return users.filter(u => u.toLowerCase().indexOf('v') > -1)
     }, [users])
 
+    const addUser = () => {
+        const newUsers = [...users, 'Sveta' + new Date().getTime()]
+        setUsers(newUsers);
+    }
+
+
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={addUser}>add User</button>
         {counter}
         <Users users={filteredUsers} />
     </>
