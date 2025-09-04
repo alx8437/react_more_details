@@ -33,3 +33,27 @@ export const SimpleExample = () => {
     </>
 }
 
+export const SetTimeOutExample = () => {
+    const [time, setTime] = useState(new Date())
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTime(new Date())
+        }, 1000)
+
+        return () => clearInterval(timer);
+    }, [])
+
+    const getTime = (date: Date) => {
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        return `${hours}:${minutes}:${seconds}`;
+    }
+
+    return <>
+        Time, {getTime(time)}
+    </>
+}
+
