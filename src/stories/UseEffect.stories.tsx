@@ -11,11 +11,6 @@ export const SimpleExample = () => {
 
     useEffect(() => {
         console.log('useEffect every render')
-        //api.getUsers().then
-        //setInterval
-        //indexedDB
-        //document.getElementById
-        //document.title = "User"
     })
 
     useEffect(() => {
@@ -37,7 +32,7 @@ export const SetTimeOutExample = () => {
     const [time, setTime] = useState(new Date())
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const timer: number = window.setInterval(() => {
             setTime(new Date())
         }, 1000)
 
