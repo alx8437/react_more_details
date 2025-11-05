@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 export default {
-    title: 'useEffect demo'
+    title: 'useEffect demo',
 }
 
 export const SimpleExample = () => {
