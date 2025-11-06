@@ -1,10 +1,10 @@
-import {ClockComponentsPropsType} from "./Clock";
+import {ClockViewPropsType} from "./Clock";
 
 const get2DigitString = (num: number) => {
     return num < 10 ? "0" + num : num
 }
 
-export const DigitalClock = (props: ClockComponentsPropsType) => {
+export const DigitalClock = (props: ClockViewPropsType) => {
     const {hours, minutes, seconds} = props
 
     return (

@@ -1,9 +1,8 @@
 import {useEffect, useState} from "react";
-import './clock.css'
 import DigitalClock from "./DigitalClock";
 import AnalogClock from "./AnalogClock";
 
-export type ClockComponentsPropsType = {
+export type ClockViewPropsType = {
     hours: number
     minutes: number
     seconds: number
